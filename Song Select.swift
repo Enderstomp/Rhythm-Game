@@ -19,10 +19,12 @@ struct Song_Select: View {
                 ScrollView(.horizontal){
                     HStack{
                         NavigationLink {
-                            Chop_Suey_(Offsetx: $Offsetx, Offsety: $Offsety)
+                            Formatter2Lines(Offsetx: $Offsetx, Offsety: $Offsety)
                         } label: {
                             SongStruct(songNum: 0)
                         }
+                        .navigationTitle("")
+                        .navigationBarHidden(true)
                         NavigationLink {
                             Toxicity()
                         } label: {

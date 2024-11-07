@@ -7,19 +7,31 @@
 
 import SwiftUI
 
-struct Chop_Suey_: View {
+struct Formatter2Lines: View {
     @Binding var Offsetx: Double
     @Binding var Offsety: Double
 
     var body: some View {
         VStack{
-            Text("0")
-                .font(.system(size:20))
             ZStack{
+                Rectangle()
+                    .foregroundStyle(.black)
+                    .ignoresSafeArea()
+                Text("0")
+                    .font(.system(size:20))
+                    .offset(y:-150)
                 ZStack{
                     HStack{
                         Rectangle()
                             .frame(width: 500,height: 5)
+                            .shadow(color:.white,radius: 10)
+                            .offset(x:5)
+                            .foregroundStyle(.white)
+                        Rectangle()
+                            .frame(width: 500,height: 5)
+                            .shadow(color:.white,radius: 10)
+                            .offset(x:-5)
+                            .foregroundStyle(.white)
                     }
                 }
                 Button(action: {
